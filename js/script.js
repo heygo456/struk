@@ -13,9 +13,15 @@
     const t = $('#toast'); t.textContent = msg; t.classList.add('show');
     clearTimeout(toast.t); toast.t = setTimeout(()=>t.classList.remove('show'), 2400);
   }
+  const TITLES = {
+    form:  ['Formulir Pengiriman', 'Isi data pengirim dan penerima'],
+    struk: ['Struk Pengiriman',    'Ukuran kertas thermal 58mm']
+  };
   function showView(name){
     document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active', v.id==='view-'+name));
     document.querySelectorAll('.bottomnav button').forEach(b=>b.classList.toggle('active', b.dataset.view===name));
+    $('#ttl').textContent = TITLES[name][0]; $('#sub').textContent = TITLES[name][1];
+    $('#btnTopBack').hidden = (name === 'form');
     window.scrollTo({top:0,behavior:'smooth'});
   }
   document.querySelectorAll('.bottomnav button').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
@@ -346,4 +352,5 @@
   });
   $('#btnPrint').addEventListener('click', ()=>window.print());
   $('#btnBack').addEventListener('click', ()=>showView('form'));
+  $('#btnTopBack').addEventListener('click', ()=>showView('form'));
 })();

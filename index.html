@@ -11,25 +11,23 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="topbar">
-  <div class="brand">
-    <div class="logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div>
-    <div><b>Struk Pengiriman</b><small>Formulir pengirim &amp; penerima</small></div>
+<header class="top">
+  <button class="back" id="btnTopBack" type="button" aria-label="Kembali" hidden>
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <div class="logo">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>
   </div>
+  <h1 id="ttl">Formulir Pengiriman</h1>
+  <p id="sub">Isi data pengirim dan penerima</p>
 </header>
 
-<main class="wrap">
+<main class="sheet">
   <!-- ===== TAB FORMULIR ===== -->
   <section class="view active" id="view-form">
-    <div class="hero">
-      <span class="chip">Mulai dari sini</span>
-      <h1>Isi Data, Cetak Struk</h1>
-      <p>Lengkapi data pengirim dan penerima, struk 58mm siap dicetak.</p>
-    </div>
-
     <form id="form" novalidate autocomplete="off">
-      <div class="card">
-        <h2><span class="dot">1</span> Pengirim</h2>
+      <div class="group">
+        <h2><span class="dot">1</span> Data Pengirim</h2>
         <div class="field"><label for="pNama">Nama</label>
           <input id="pNama" name="pNama" autocapitalize="words" enterkeyhint="next" placeholder="Nama pengirim" required>
           <em class="err" data-for="pNama"></em></div>
@@ -39,8 +37,8 @@
         <div class="addr-block" data-prefix="p"></div>
       </div>
 
-      <div class="card">
-        <h2><span class="dot">2</span> Penerima</h2>
+      <div class="group">
+        <h2><span class="dot">2</span> Data Penerima</h2>
         <div class="field"><label for="rNama">Nama</label>
           <input id="rNama" name="rNama" autocapitalize="words" enterkeyhint="next" placeholder="Nama penerima" required>
           <em class="err" data-for="rNama"></em></div>
@@ -50,23 +48,19 @@
         <div class="addr-block" data-prefix="r"></div>
       </div>
 
-      <button class="btn ghost" type="button" id="btnReset">Kosongkan Formulir</button>
       <div class="sticky"><button class="btn primary" type="submit">Buat Struk</button></div>
+      <div class="or"><span>atau</span></div>
+      <button class="btn ghost" type="button" id="btnReset">Kosongkan Formulir</button>
     </form>
   </section>
 
   <!-- ===== TAB STRUK ===== -->
   <section class="view" id="view-struk">
-    <div class="hero small">
-      <span class="chip">Pratinjau</span>
-      <h1>Struk Pengiriman</h1>
-      <p>Ukuran kertas thermal 58mm.</p>
-    </div>
     <div class="empty" id="empty">Belum ada struk. Isi formulir lalu tekan <b>Buat Struk</b>.</div>
     <div id="receipt" class="receipt" hidden></div>
     <div class="actions" id="actions" hidden>
       <button class="btn primary" id="btnPrint" type="button">Cetak / Simpan PDF</button>
-      <button class="btn ghost" id="btnBack" type="button">← Ubah Data</button>
+      <button class="btn ghost" id="btnBack" type="button">Ubah Data</button>
     </div>
   </section>
 </main>
