@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ff7a1a">
+<title>Struk Pengiriman</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">📦</div>
+    <div><b>Struk Pengiriman</b><small>Formulir pengirim &amp; penerima</small></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- ===== TAB FORMULIR ===== -->
+  <section class="view active" id="view-form">
+    <div class="hero">
+      <span class="chip">Mulai dari sini</span>
+      <h1>Isi Data, Cetak Struk</h1>
+      <p>Lengkapi data pengirim dan penerima, struk 58mm siap dicetak.</p>
+    </div>
+
+    <form id="form" novalidate autocomplete="off">
+      <div class="card">
+        <h2><span class="dot">1</span> Pengirim</h2>
+        <div class="field"><label for="pNama">Nama</label>
+          <input id="pNama" name="pNama" placeholder="Nama pengirim" required>
+          <em class="err" data-for="pNama"></em></div>
+        <div class="field"><label for="pHp">Nomor HP</label>
+          <input id="pHp" name="pHp" type="tel" inputmode="tel" placeholder="08xxxxxxxxxx" required>
+          <em class="err" data-for="pHp"></em></div>
+        <div class="field"><label for="pAlamat">Alamat</label>
+          <textarea id="pAlamat" name="pAlamat" rows="3" placeholder="Alamat lengkap pengirim" required></textarea>
+          <em class="err" data-for="pAlamat"></em></div>
+      </div>
+
+      <div class="card">
+        <h2><span class="dot">2</span> Penerima</h2>
+        <div class="field"><label for="rNama">Nama</label>
+          <input id="rNama" name="rNama" placeholder="Nama penerima" required>
+          <em class="err" data-for="rNama"></em></div>
+        <div class="field"><label for="rHp">Nomor HP</label>
+          <input id="rHp" name="rHp" type="tel" inputmode="tel" placeholder="08xxxxxxxxxx" required>
+          <em class="err" data-for="rHp"></em></div>
+        <div class="field"><label for="rAlamat">Alamat</label>
+          <textarea id="rAlamat" name="rAlamat" rows="3" placeholder="Alamat lengkap penerima" required></textarea>
+          <em class="err" data-for="rAlamat"></em></div>
+      </div>
+
+      <button class="btn primary" type="submit">Buat Struk</button>
+      <button class="btn ghost" type="button" id="btnReset">Kosongkan Formulir</button>
+    </form>
+  </section>
+
+  <!-- ===== TAB STRUK ===== -->
+  <section class="view" id="view-struk">
+    <div class="hero small">
+      <span class="chip">Pratinjau</span>
+      <h1>Struk Pengiriman</h1>
+      <p>Ukuran kertas thermal 58mm.</p>
+    </div>
+    <div class="empty" id="empty">Belum ada struk. Isi formulir lalu tekan <b>Buat Struk</b>.</div>
+    <div id="receipt" class="receipt" hidden></div>
+    <div class="actions" id="actions" hidden>
+      <button class="btn primary" id="btnPrint" type="button">🖨️ Cetak / Simpan PDF</button>
+      <button class="btn ghost" id="btnBack" type="button">← Ubah Data</button>
+    </div>
+  </section>
+</main>
+
+<nav class="bottomnav">
+  <button class="active" data-view="form"><span>📝</span>Formulir</button>
+  <button data-view="struk"><span>🧾</span>Struk</button>
+</nav>
+<div id="toast" class="toast"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
