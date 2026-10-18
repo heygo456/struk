@@ -79,7 +79,13 @@
 
   form.addEventListener('submit', e=>{
     e.preventDefault();
-    if(!validate()){ toast('Periksa kembali isian yang merah'); return; }
+    if(!validate()){
+      toast('Periksa kembali isian yang merah');
+      if(navigator.vibrate) navigator.vibrate(60);
+      const bad = document.querySelector('.field.bad input, .field.bad textarea');
+      if(bad){ bad.scrollIntoView({behavior:'smooth',block:'center'}); bad.focus({preventScroll:true}); }
+      return;
+    }
     const d = { resi:noResi(), tgl:tanggal() };
     FIELDS.forEach(id=>{
       let v = $('#'+id).value.trim().replace(/\s+/g,' ');
