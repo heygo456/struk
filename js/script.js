@@ -4,9 +4,9 @@
   const form = $('#form'), receipt = $('#receipt');
   const PREFIX = ['p','r'];                       // p = pengirim, r = penerima
   const USAHA = {
-    nama:'HeyGoldfish',
+    nama:'HEYGOLDFISH',
     sub:'BANYUWANGI GOLDFISH CENTER',
-    tagline:'Pusat Ikan Goldfish Berkualitas di Banyuwangi',
+    tagline:'Pusat Goldfish Berkualitas Banyuwangi',
     footer1:'Goldfish Quality \u2022 Care \u2022 Passion',
     footer2:'Terima kasih atas kepercayaan anda.'
   };

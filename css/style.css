@@ -1,3 +1,9 @@
+/* Font kop struk: Sukajan Brush Demo (taruh file di folder fonts/) */
+@font-face{
+  font-family:'Sukajan Brush';
+  src:url('../fonts/sukajan-brush-demo.regular.otf') format('opentype');
+  font-weight:400;font-style:normal;font-display:swap;
+}
 :root{
   --brand:#000;            /* warna utama: ganti di sini (mis. #0b5cff untuk biru) */
   --on-brand:#fff;
@@ -83,7 +89,7 @@ input:disabled::placeholder{color:#b4bac4}
   box-shadow:0 4px 18px rgba(0,0,0,.06);
   font-family:'Courier New',monospace;font-size:14px;font-weight:700;line-height:1.5;color:#000}
 .receipt .c{text-align:center}
-.receipt .t{font-size:19px;font-weight:800}
+.receipt .t{font-family:'Sukajan Brush','Impact','Arial Black',sans-serif;font-size:30px;line-height:1.1;font-weight:400;letter-spacing:1px;margin-bottom:2px}
 .receipt .i{font-style:italic;font-weight:600}
 .receipt .bold{font-weight:800}
 .receipt .ln{border-top:2px dashed #000;margin:8px 0}
@@ -124,6 +130,6 @@ input:disabled::placeholder{color:#b4bac4}
   .sheet{margin:0;padding:0;border-radius:0;min-height:0}
   #view-struk{display:block!important}
   .receipt{border:0;border-radius:0;box-shadow:none;max-width:54mm;width:54mm;margin:0;padding:2mm;font-size:10.5px;line-height:1.4}
-  .receipt .t{font-size:14px}
+  .receipt .t{font-size:22px}
   .receipt .ln{border-top-width:1px;margin:5px 0}
 }
