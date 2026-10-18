@@ -323,7 +323,6 @@
       '<div class="c bold">'+esc(USAHA.sub)+'</div>'+
       '<div class="c i">'+esc(USAHA.tagline)+'</div>'+
       '<div class="ln"></div>'+
-      '<div class="row"><span>No</span><span>'+esc(d.resi)+'</span></div>'+
       '<div class="row"><span>Tgl</span><span>'+esc(d.tgl)+'</span></div>'+
       '<div class="ln"></div>'+ blok('PENGIRIM','p') +
       '<div class="ln"></div>'+ blok('PENERIMA','r') +
