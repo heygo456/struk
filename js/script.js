@@ -3,7 +3,13 @@
   const $ = s => document.querySelector(s);
   const form = $('#form'), receipt = $('#receipt');
   const PREFIX = ['p','r'];                       // p = pengirim, r = penerima
-  const USAHA = { nama:'STRUK PENGIRIMAN', tagline:'Bukti Data Pengiriman Paket' };
+  const USAHA = {
+    nama:'HeyGoldfish',
+    sub:'BANYUWANGI GOLDFISH CENTER',
+    tagline:'Pusat Ikan Goldfish Berkualitas di Banyuwangi',
+    footer1:'Goldfish Quality \u2022 Care \u2022 Passion',
+    footer2:'Terima kasih atas kepercayaan anda.'
+  };
 
   /* ================= UTIL ================= */
   const esc = s => String(s).replace(/[&<>"']/g, c =>
@@ -314,6 +320,7 @@
       '<div class="sec">Alamat</div>'+alamatHtml(d,p);
     receipt.innerHTML =
       '<div class="c t">'+esc(USAHA.nama)+'</div>'+
+      '<div class="c bold">'+esc(USAHA.sub)+'</div>'+
       '<div class="c i">'+esc(USAHA.tagline)+'</div>'+
       '<div class="ln"></div>'+
       '<div class="row"><span>No</span><span>'+esc(d.resi)+'</span></div>'+
@@ -321,7 +328,8 @@
       '<div class="ln"></div>'+ blok('PENGIRIM','p') +
       '<div class="ln"></div>'+ blok('PENERIMA','r') +
       '<div class="ln"></div>'+
-      '<div class="c">Terima kasih</div>';
+      '<div class="c bold">'+esc(USAHA.footer1)+'</div>'+
+      '<div class="c">'+esc(USAHA.footer2)+'</div>';
     receipt.hidden = false; $('#actions').hidden = false; $('#empty').hidden = true;
   }
 
